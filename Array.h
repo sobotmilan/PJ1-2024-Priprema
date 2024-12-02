@@ -26,8 +26,8 @@ public:
     Complex &at(int index);             // posto se u tekstu trazi mogucnost mijenjanja dohvacenog elementa liste, nemamo const iza zagrade.
     const Complex &at(int index) const; // trazeno je funkcionisanje i u konstantnom kontekstu, ali ovdje promjena nece biti, ovo je samo za pristup.
 
-    void transform(Complex (*)(Complex)); // obratiti paznju, u tekstu nije nigdje pomenuto da se prosljedjuje referenca u ovu (*) funkciju, znaci dobro razmisliti kako ce bezimena funkc izgledati u mainu
-    void transform(Complex (*)(Complex)) const;
+    Array transform(Complex (*)(Complex)); // obratiti paznju, u tekstu nije nigdje pomenuto da se prosljedjuje referenca u ovu (*) funkciju, znaci dobro razmisliti kako ce bezimena funkc izgledati u mainu
+    const Array transform(Complex (*)(const Complex)) const;
 
     Array &operator=(const Array &) = delete; // opet, onemogucena kopirajuca dodjela
     Array &operator=(Array &&);               // opet,omogucena pomjerajuca dodjela

@@ -11,9 +11,9 @@ public:
     ~Complex();
     double getRe() const;
     double getIm() const;
-
-    Complex operator+(Complex &);
-    const Complex operator+(const Complex &) const;
+    Complex operator=(const Complex &);
+    Complex operator+(const Complex &) const;
+    const Complex operator+(const Complex &);
 };
 
 std::ostream &operator<<(std::ostream &os, const Complex &);

@@ -24,8 +24,7 @@ int main()
     cout << c.at(1) << endl;
     c.transform(lambda); // test validnosti transform metode za nekonstantne nizove
     cout << c << endl;
-    const Array d(std::move(c)); // test pomjerajuce inicijalizacije na konstantan niz
-    d.transform(lambda);         // test funkcionalnosti transform metode na konstantnom objektu
-    cout << d << endl;
+    const Array d(std::move(c));         // test pomjerajuce inicijalizacije na konstantan niz
+    cout << d.transform(lambda) << endl; // test funkcionalnosti transform metode na konstantnom objektu
     return 0;
 }

@@ -78,17 +78,21 @@ const Complex &Array::at(int index) const
     else
         return ERROR;
 }
-void Array::transform(Complex (*f)(Complex))
+Array Array::transform(Complex (*f)(Complex))
 {
-    Array result(this->length);
+    Array result(this->capacity);
+    result.length = this->length;
     for (int i = 0; i < this->length; i++)
         result.data[i] = (*f)(this->data[i]);
+    return result;
 }
-void Array::transform(Complex (*f)(Complex)) const
+const Array Array::transform(Complex (*f)(const Complex)) const
 {
-    Array result(this->length);
+    Array result(this->capacity);
+    result.length = this->length;
     for (int i = 0; i < this->length; i++)
         result.data[i] = (*f)(this->data[i]);
+    return result;
 }
 Array &Array::operator=(Array &&other)
 {
