@@ -80,13 +80,15 @@ const Complex &Array::at(int index) const
 }
 void Array::transform(Complex (*f)(Complex))
 {
+    Array result(this->length);
     for (int i = 0; i < this->length; i++)
-        this->data[i] = (*f)(this->data[i]);
+        result.data[i] = (*f)(this->data[i]);
 }
 void Array::transform(Complex (*f)(Complex)) const
 {
+    Array result(this->length);
     for (int i = 0; i < this->length; i++)
-        this->data[i] = (*f)(this->data[i]);
+        result.data[i] = (*f)(this->data[i]);
 }
 Array &Array::operator=(Array &&other)
 {
